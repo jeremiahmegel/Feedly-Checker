@@ -15,7 +15,7 @@
 	along with Feedly Checker. If not, see <http://www.gnu.org/licenses/>.
 */
 
-var feedlyToken = JSON.parse(localStorage["session@cloud"]).feedlyToken;
-if (feedlyToken) {
-	chrome.runtime.sendMessage({name: "feedlyToken", data: {feedlyToken: feedlyToken}});
+var lsJSON = JSON.parse(localStorage["session@cloud"])
+if (lsJSON) {
+	chrome.runtime.sendMessage({name: "feedlyAuth", data: {feedlyToken: lsJSON.feedlyToken, feedlyId: lsJSON.feedlyId}});
 }

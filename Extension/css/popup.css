@@ -1,0 +1,176 @@
+@charset "UTF-8";
+
+/*
+	Copyright Jeremiah Megel 2013
+	
+	Feedly Checker is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+	
+	Feedly Checker is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+	
+	You should have received a copy of the GNU General Public License
+	along with Feedly Checker. If not, see <http://www.gnu.org/licenses/>.
+*/
+
+* {
+	max-width: 600px;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+	width: 600px;
+}
+
+a {
+	color: blue;
+	display: inline-block;
+	text-decoration: none;
+}
+
+#utmHeader {
+	background-color: gray;
+	border-radius: 0 0 5px 5px;
+	display: block;
+	height: 30px;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	width: inherit;
+}
+
+#headerIcon {
+	height: 30px;
+}
+
+#utmHeader>span {
+	display: inline-block;
+	font-size: 20px;
+	height: 100%;
+	vertical-align: text-bottom;
+}
+
+#entries {
+	margin-top: 32px;
+}
+
+#entries>section>a {
+	background-color: gray;
+	border-radius: 0 0 3px 3px;
+	color: black;
+	display: block;
+	font-size: 12px;
+	margin: 0 3px 2px 3px;
+	padding: 0 4px;
+}
+
+#entries>section>a>span:first-of-type {
+	display: inline-block;
+	width: 15px;
+}
+
+#entries>section>div {
+	overflow: hidden;
+	width: 100%;
+}
+
+#entries>section>div>div {
+	margin-bottom: 2px;
+}
+
+#entries>section>div>div>section {
+	background-color: #f8f8f8;
+	border: 1px gray solid;
+	border-radius: 5px;
+	display: block;
+	margin: 5px 3px;
+	padding: 5px;
+}
+
+#entries>section>div>div>section:first-of-type {
+    margin-top: 0;
+}
+
+#entries>section>div>div>section:last-of-type {
+    margin-bottom: 0;
+}
+
+#entries>section>div>div>section>header {
+	position: relative;
+}
+
+#entries>section>div>div>section>header>a {
+	width: 100%;
+}
+
+#entries>section>div>div>section>header>a>.info>.attrib {
+	color: gray;
+	display: block;
+	float: left;
+	font-size: 10px;
+	line-height: 10px;
+}
+
+#entries>section>div>div>section[data-read="true"]>header>a>.title {
+	color: gray;
+}
+
+#entries>section>div>div>section>header>a>.info>.time {
+	color: gray;
+	display: block;
+	float: right;
+	font-size: 10px;
+	line-height: 10px;
+}
+
+#entries>section>div>div>section>header>.controls {
+	display: block;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	font-size: 0;
+	top: 0;
+	right: 0;
+	opacity: 0;
+	-webkit-transition: opacity 0.25s;
+	z-index: 4;
+}
+
+#entries>section>div>div>section>header:hover>.controls {
+	opacity: 1;
+}
+
+#entries>section>div>div>section>header>.controls>a {
+	width: 29px;
+	height: 29px;
+	display: inline-block;
+	background-size: 29px 29px;
+}
+
+#entries>section>div>div>section[data-read="false"]>header>.controls>a.readCon {
+	background-image: url("../images/controls/unread.png");
+}
+
+#entries>section>div>div>section[data-read="true"]>header>.controls>a.readCon {
+	background-image: url("../images/controls/read.png");
+}
+
+#entries>section>div>div>section>header>.controls>a.openCon {
+	background-image: url("../images/controls/open.png");
+}
+
+#entries>section>div>div>section>div.content {
+	font-size: 14px;
+	height: 0px;
+	overflow: hidden;
+}
+
+#entries>section>div>div>section>div.content * {
+    max-width: 100%;
+}
